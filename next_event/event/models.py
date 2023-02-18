@@ -27,11 +27,12 @@ class Event(models.Model):
         User, verbose_name="Создатель события",
         on_delete=models.CASCADE, related_name='owner'
         )
-    follower = models.ForeignKey(
-        Follower, verbose_name="Подписчик события",  on_delete=models.SET_NULL,
-        null=True, related_name='follower'
-        , blank=True)
+    follower = models.ManyToManyField(through="EventFollower", blank=True)
 
     class Meta:
         ordering = ("time",)
 
+
+class EventFollower(models.Model):
+    id_event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    id_follower = models.ForeignKey(Follower, on_delete=models.CASCADE)
