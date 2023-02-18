@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from event.models import Event, Follower
 from .serializers import (EventSerializer, EventMiniSerializer,
-    FollowerSerializer)
+    )
 
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
@@ -15,6 +15,5 @@ class EventMiniViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventMiniSerializer
 
-class FollowerViewSet(viewsets.ModelViewSet):
-    queryset = Follower.objects.all()
-    serializer_class = FollowerSerializer
+
+        

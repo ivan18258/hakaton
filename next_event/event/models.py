@@ -8,10 +8,11 @@ class Follower(models.Model):
     name = models.CharField(
         verbose_name="Имя подписчика", max_length=64)
     telegram_id = models.IntegerField(
-        verbose_name="Telegram ID",)
+        verbose_name="Telegram ID",
+        primary_key=True)
 
-    def __str__(self):
-        return self.telegram_id
+    class Meta:
+        ordering = ("telegram_id",)
 
 class Event(models.Model):
     title = models.CharField(
