@@ -8,7 +8,7 @@ class Follower(models.Model):
     name = models.CharField(
         verbose_name="Имя подписчика", max_length=64)
     telegram_id = models.IntegerField(
-        verbose_name="Telegram ID", max_length=128)
+        verbose_name="Telegram ID",)
 
 
 class Event(models.Model):
@@ -21,6 +21,9 @@ class Event(models.Model):
     hours_to_event = models.IntegerField(
         verbose_name="Кол-во часов до события")
     owner = models.ForeignKey(
-        User, verbose_name="Создатель события", on_delete=models.CASCADE)
+        User, verbose_name="Создатель события",
+        on_delete=models.CASCADE,
+        )
     follower = models.ForeignKey(
-        Follower, verbose_name="Подписчик события",  on_delete=models.SET_NULL)
+        Follower, verbose_name="Подписчик события",  on_delete=models.SET_NULL,
+        null=True)

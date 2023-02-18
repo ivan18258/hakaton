@@ -8,8 +8,7 @@ class EventAdmin(admin.ModelAdmin):
         'title',
         'description',
         'time',
-        'reminder_to_event_1',
-        'reminder_to_event_1',
+        'hours_to_event',
         'follower',
     )
 
@@ -17,7 +16,7 @@ class EventAdmin(admin.ModelAdmin):
         'title',
         'description',
         'time',
-        'reminder_to_event_1',
-        'reminder_to_event_1',
         'follower',
+        'hours_to_event',
     )
+    

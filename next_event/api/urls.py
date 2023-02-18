@@ -6,7 +6,7 @@ from .views import (EventViewSet)
 app_name = 'api'
 
 routerV1 = DefaultRouter()
-routerV1.register(r'titles', EventViewSet, basename='titles')
+routerV1.register(r'events', EventViewSet, basename='titles')
 
 urlpatterns = [
     path('v1/', include(routerV1.urls)),
