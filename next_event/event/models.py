@@ -14,6 +14,7 @@ class Follower(models.Model):
     class Meta:
         ordering = ("telegram_id",)
 
+
 class Event(models.Model):
     title = models.CharField(
         verbose_name="Название события", max_length=64)
@@ -27,7 +28,7 @@ class Event(models.Model):
         User, verbose_name="Создатель события",
         on_delete=models.CASCADE, related_name='owner'
         )
-    follower = models.ManyToManyField(through="EventFollower", blank=True)
+    follower = models.ManyToManyField(Follower, through="EventFollower", blank=True)
 
     class Meta:
         ordering = ("time",)

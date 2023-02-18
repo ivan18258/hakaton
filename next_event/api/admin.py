@@ -1,5 +1,5 @@
 from django.contrib import admin
-from event.models import Event, Follower
+from event.models import Event, Follower, EventFollower
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
@@ -9,7 +9,6 @@ class EventAdmin(admin.ModelAdmin):
         'description',
         'time',
         'hours_to_event',
-        'follower',
         'owner',
     )
 
@@ -17,7 +16,6 @@ class EventAdmin(admin.ModelAdmin):
         'title',
         'description',
         'time',
-        'follower',
         'hours_to_event',
         'owner',
     )
@@ -32,4 +30,17 @@ class FollowerAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'telegram_id',
+    )
+
+
+@admin.register(EventFollower)
+class EventFollower(admin.ModelAdmin):
+    fields = (
+        'id_event',
+        'id_follower',
+    )
+
+    list_display = (
+        'id_event',
+        'id_follower',
     )
