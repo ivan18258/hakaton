@@ -14,6 +14,7 @@ class FollowerSerializer(serializers.ModelSerializer):
 
 class EventSerializer(serializers.ModelSerializer):
     follower = FollowerSerializer(many=True, required=False,)
+
     class Meta:
         model = Event
         fields = ('title', 'description', 'time', 'hours_to_event', 'owner', 'follower',)
