@@ -10,6 +10,8 @@ class Follower(models.Model):
     telegram_id = models.IntegerField(
         verbose_name="Telegram ID",)
 
+    def __str__(self):
+        return self.telegram_id
 
 class Event(models.Model):
     title = models.CharField(
@@ -26,4 +28,9 @@ class Event(models.Model):
         )
     follower = models.ForeignKey(
         Follower, verbose_name="Подписчик события",  on_delete=models.SET_NULL,
-        null=True)
+        null=True, blank=True)
+
+    class Meta:
+        ordering = ("time",)
+
+    

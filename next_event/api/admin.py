@@ -10,6 +10,7 @@ class EventAdmin(admin.ModelAdmin):
         'time',
         'hours_to_event',
         'follower',
+        'owner',
     )
 
     list_display = (
@@ -18,5 +19,6 @@ class EventAdmin(admin.ModelAdmin):
         'time',
         'follower',
         'hours_to_event',
+        'owner',
     )
     
