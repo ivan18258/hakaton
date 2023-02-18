@@ -14,6 +14,7 @@ class EventViewSet(viewsets.ModelViewSet):
 class EventMiniViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventMiniSerializer
+    
 
 
 class FollowerViewSet(viewsets.ModelViewSet):
