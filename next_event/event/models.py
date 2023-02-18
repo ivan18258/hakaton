@@ -35,4 +35,3 @@ class Event(models.Model):
     class Meta:
         ordering = ("time",)
 
-    
