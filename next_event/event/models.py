@@ -23,7 +23,6 @@ class Event(models.Model):
     hours_to_event = models.IntegerField(
         verbose_name="Кол-во часов до события")
     owner = models.ForeignKey(
-
         User, verbose_name="Создатель события",
         on_delete=models.CASCADE, related_name='owner'
         )
