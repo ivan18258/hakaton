@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class Follower(models.Model):
@@ -17,5 +20,7 @@ class Event(models.Model):
         verbose_name="Время события")
     hours_to_event = models.IntegerField(
         verbose_name="Кол-во часов до события")
+    owner = models.ForeignKey(
+        User, verbose_name="Создатель события", on_delete=models.CASCADE)
     follower = models.ForeignKey(
         Follower, verbose_name="Подписчик события",  on_delete=models.SET_NULL)
