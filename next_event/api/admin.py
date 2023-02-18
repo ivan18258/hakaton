@@ -8,16 +8,17 @@ class EventAdmin(admin.ModelAdmin):
         'title',
         'description',
         'time',
-        'reminder_to_event_1',
-        'reminder_to_event_1',
+        'hours_to_event',
         'follower',
+        'owner',
     )
 
     list_display = (
         'title',
         'description',
         'time',
-        'reminder_to_event_1',
-        'reminder_to_event_1',
         'follower',
+        'hours_to_event',
+        'owner',
     )
+    
