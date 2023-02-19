@@ -1,6 +1,6 @@
 from django.contrib import admin
 from event.models import Event, Follower, EventFollower
-
+from django.utils.safestring import mark_safe
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     """Событие"""
@@ -10,7 +10,13 @@ class EventAdmin(admin.ModelAdmin):
         'time',
         'hours_to_event',
         'owner',
+        'image',
+        "preview"
     )
+    readonly_fields = ["preview"]
+
+    def preview(self, obj):
+        return mark_safe(f'<img src="{obj.image.url}">')
 
     list_display = (
         'title',
@@ -18,7 +24,9 @@ class EventAdmin(admin.ModelAdmin):
         'time',
         'hours_to_event',
         'owner',
+        'image',
     )
+  
     
 @admin.register(Follower)
 class FollowerAdmin(admin.ModelAdmin):

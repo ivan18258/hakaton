@@ -30,6 +30,13 @@ class Event(models.Model):
         )
     follower = models.ManyToManyField(Follower, through="EventFollower", blank=True)
 
+    image = models.ImageField(
+        'Картинка',
+        upload_to='posts/',
+        blank=True,
+        null=True,
+    )
+
     class Meta:
         ordering = ("time",)
 

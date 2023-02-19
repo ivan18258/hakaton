@@ -1,0 +1,18 @@
+POST http://127.0.0.1:8000/api/v1/events/
+Content-Type: application/json
+
+[
+    {
+        "title": "tyj",
+        "description": "guye5",
+        "time": "2023-02-18T13:52:16Z",
+        "hours_to_event": 1,
+        "owner": 1,
+        "follower": [
+            {
+                "name": "групп 3",
+                "telegram_id": 46785
+            }
+            ]
+    }
+]
